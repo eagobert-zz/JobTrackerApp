@@ -15,6 +15,12 @@ namespace JobTrackerApp.Data
         {
         }
 
+        public DbSet<ApplicationUser> User { get; set; }
+        public DbSet<Company> Company { get; set; }
+        public DbSet<Contact> Contact { get; set; }
+        public DbSet<Job> Job { get; set; }
+        public DbSet<Job_Contact> Job_Contact { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
