@@ -1,0 +1,41 @@
+﻿@model IEnumerable<JobTrackerApp.Models.Job_Contact>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contact.POC_firstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Job.Job_Post_Url)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Job_ContactId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Job_ContactId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Job_ContactId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
